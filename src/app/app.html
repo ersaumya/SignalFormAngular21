@@ -3,7 +3,7 @@
     <div class="card-body p-4">
       <h4 class="card-title mb-4 text-center fw-semibold">Sign In</h4>
       <!-- Email -->
-      <form>
+      <form (submit)="onSubmit($event)">
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
           <input
@@ -51,7 +51,9 @@
         </div>
         <!-- Submit -->
         <div class="d-grid">
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" [disabled]="loginForm().invalid()" class="btn btn-primary">
+            Login
+          </button>
         </div>
       </form>
     </div>

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { form, FormField, required, email } from '@angular/forms/signals';
+import { form, FormField, required, email, submit } from '@angular/forms/signals';
 
 interface Login {
   email: string;
@@ -24,4 +24,12 @@ export class App {
     email(fieldPath.email, { message: 'Enter a valid email' });
     required(fieldPath.password, { message: 'Password is Required' });
   });
+
+  onSubmit(event: Event) {
+    event.preventDefault();
+    submit(this.loginForm, async () => {
+      const credentials = this.loginModel();
+      console.log('Logging in with', credentials);
+    });
+  }
 }
