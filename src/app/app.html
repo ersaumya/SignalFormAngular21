@@ -13,6 +13,13 @@
             placeholder="you@example.com"
             [formField]="loginForm.email"
           />
+          @if (loginForm.email().invalid() && loginForm.email().touched()) {
+            <div class="invalid-feedback d-block">
+              @for (error of loginForm.email().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
         </div>
         <!-- Password -->
         <div class="mb-3">
@@ -24,6 +31,13 @@
             placeholder="••••••••"
             [formField]="loginForm.password"
           />
+          @if (loginForm.password().invalid() && loginForm.password().touched()) {
+            <div class="invalid-feedback d-block">
+              @for (error of loginForm.password().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
         </div>
         <!-- Remember Me -->
         <div class="mb-4 form-check">
