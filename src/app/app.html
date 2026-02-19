@@ -2,7 +2,7 @@
   <div class="card shadow-sm" style="width: 100%; max-width: 420px">
     <div class="card-body p-4">
       <h4 class="card-title mb-4 text-center fw-semibold">Sign In</h4>
-
+      <!-- Email -->
       <form>
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
@@ -14,7 +14,7 @@
             [formField]="loginForm.email"
           />
         </div>
-
+        <!-- Password -->
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
           <input
@@ -25,7 +25,7 @@
             [formField]="loginForm.password"
           />
         </div>
-
+        <!-- Remember Me -->
         <div class="mb-4 form-check">
           <input
             id="rememberMe"
@@ -35,14 +35,14 @@
           />
           <label for="rememberMe" class="form-check-label">Remember Me</label>
         </div>
-
+        <!-- Submit -->
         <div class="d-grid">
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
       </form>
     </div>
   </div>
-
+  <!-- Live Debug Card -->
   <div class="position-fixed bottom-0 start-0 m-3">
     <div class="card bg-white border shadow-sm px-3 py-2" style="font-size: 0.85rem">
       <p class="mb-1 text-muted">
